@@ -1,0 +1,61 @@
+---
+name: Integration/Regression
+
+on: [push, pull_request]
+
+jobs:
+  modsecurity-test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    
+    steps:
+      - name: "Checkout repo"
+        uses: actions/checkout@v2
+
+      - name: "Install dependencies"
+        run: |
+          curl -skLo - https://github.com/coreruleset/go-ftw/releases/latest/download/ftw_Linux_x86_64.tar.gz | tar -xzf - ftw
+      
+      - name: "Test plugin on ModSecurity v2 / Apache"
+        run: |
+          touch plugins/placeholder-config.conf
+          touch plugins/placeholder-before.conf
+          touch plugins/placeholder-after.conf
+
+          docker-compose -f tests/integration/docker-compose.yml --project-directory . up -d apache-nightly
+          echo "waiting for the webserver to start"; sleep 10
+
+          ./ftw check -d tests/regression/tests
+          ./ftw run -d tests/regression/tests
+
+          docker-compose -f tests/integration/docker-compose.yml --project-directory . down
+        env:
+          FTW_LOGFILE: './tests/logs/modsec2-apache/error.log'
+          FTW_LOGTYPE_NAME: 'apache'
+          FTW_LOGTYPE_TIMEREGEX: '\[([A-Z][a-z]{2} [A-z][a-z]{2} \d{1,2} \d{1,2}\:\d{1,2}\:\d{1,2}\.\d+? \d{4})\]'
+          FTW_LOGTYPE_TIMEFORMAT: 'ddd MMM DD HH:mm:ss.S YYYY'
+      
+      - name: "Test plugin on ModSecurity v3 / Nginx"
+        run: |
+          touch plugins/placeholder-config.conf
+          touch plugins/placeholder-before.conf
+          touch plugins/placeholder-after.conf
+
+          docker-compose -f tests/integration/docker-compose.yml --project-directory . up -d nginx-nightly
+          echo "waiting for the webserver to start"; sleep 10
+
+          docker cp tests/integration/modsec-setup.conf nginx-nightly:/etc/modsecurity.d/setup.conf
+          docker exec nginx-nightly nginx -s reload
+
+          echo "waiting nginx reload"; sleep 5
+
+          ./ftw check -d tests/regression/tests
+          ./ftw run -d tests/regression/tests
+
+          docker-compose -f tests/integration/docker-compose.yml --project-directory . down
+        env:
+          FTW_LOGFILE: './tests/logs/modsec3-nginx/error.log'
+          FTW_LOGTYPE_NAME: 'apache'
+          FTW_LOGTYPE_TIMEREGEX: '\[([A-Z][a-z]{2} [A-z][a-z]{2} \d{1,2} \d{1,2}\:\d{1,2}\:\d{1,2}\.\d+? \d{4})\]'
+          FTW_LOGTYPE_TIMEFORMAT: 'ddd MMM DD HH:mm:ss.S YYYY'
