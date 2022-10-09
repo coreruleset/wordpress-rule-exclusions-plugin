@@ -28,6 +28,7 @@ jobs:
           docker-compose -f tests/integration/docker-compose.yml --project-directory . up -d apache-nightly
           echo "waiting for the webserver to start"; sleep 10
 
+          echo "inspect container logs"
           docker logs apache-nightly
 
           ./ftw check -d tests/regression/tests
