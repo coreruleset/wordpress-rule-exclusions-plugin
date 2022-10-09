@@ -27,9 +27,11 @@ services:
       - 80:80
     volumes:
       - /tmp/coreruleset-nightly/rules:/opt/owasp-crs/rules:ro
+      - /tmp/coreruleset-nightly/crs-setup.conf.example:/etc/modsecurity.d/owasp-crs/crs-setup.conf.example
       - ./tests/logs/modsec2-apache:/var/log:rw
       - ./tests/integration/modsec-setup.conf:/etc/modsecurity.d/setup.conf:ro
       - ./plugins:/etc/modsecurity.d/plugins
+    entrypoint: ["/bin/sh", "-c", "/bin/cp /etc/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/modsecurity.d/owasp-crs/crs-setup.conf && /docker-entrypoint.sh && apachectl -D FOREGROUND"]
     networks:
       - crs-plugins-net
   
@@ -46,7 +48,7 @@ services:
       BLOCKING_PARANOIA: 4
       TZ: "${TZ}"
       ERRORLOG: "/var/log/nginx/error.log"
-      LOGLEVEL: "debug"
+      LOGLEVEL: "info"
       ACCESSLOG: "/var/log/nginx/access.log"
       MODSEC_AUDIT_LOG_FORMAT: "Native"
       MODSEC_AUDIT_LOG_TYPE: "Serial"
@@ -59,8 +61,10 @@ services:
       - 80:80
     volumes:
       - /tmp/coreruleset-nightly/rules:/opt/owasp-crs/rules:ro
+      - /tmp/coreruleset-nightly/crs-setup.conf.example:/etc/modsecurity.d/owasp-crs/crs-setup.conf.example
       - ./tests/logs/modsec3-nginx:/var/log/nginx:rw
       - ./plugins:/etc/modsecurity.d/plugins
+    entrypoint: ["/bin/sh", "-c", "/bin/cp /etc/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/modsecurity.d/owasp-crs/crs-setup.conf && /docker-entrypoint.sh && nginx -g 'daemon off;'"]
     networks:
       - crs-plugins-net
 

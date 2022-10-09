@@ -39,6 +39,8 @@ jobs:
           FTW_LOGTYPE_TIMEFORMAT: 'ddd MMM DD HH:mm:ss.S YYYY'
       
       - name: "Test plugin on ModSecurity v3 / Nginx"
+        # test on Nginx temp disabled
+        if: ${{ false }}
         run: |
           touch plugins/placeholder-config.conf
           touch plugins/placeholder-before.conf
