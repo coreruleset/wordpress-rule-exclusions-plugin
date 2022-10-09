@@ -40,7 +40,7 @@ jobs:
       
       - name: "Test plugin on ModSecurity v3 / Nginx"
         # test on Nginx temp disabled
-        if: ${{ false }}
+        #if: ${{ false }}
         run: |
           touch plugins/placeholder-config.conf
           touch plugins/placeholder-before.conf
@@ -50,6 +50,16 @@ jobs:
           echo "waiting for the webserver to start"; sleep 10
 
           docker cp tests/integration/modsec-setup.conf nginx-nightly:/etc/modsecurity.d/setup.conf
+          cat << EOF > /tmp/crs-setup.conf
+          SecDefaultAction "phase:1,pass,log,tag:'modsecurity'"\nSecDefaultAction "phase:2,pass,log,tag:'modsecurity'"
+          SecAction "id:900000,phase:1,nolog,pass,t:none,setvar:tx.blocking_paranoia_level=4"
+          SecAction "id:900110,phase:1,nolog,pass,t:none,setvar:tx.inbound_anomaly_score_threshold=5,setvar:tx.outbound_anomaly_score_threshold=4"
+          SecAction "id:900350,phase:1,nolog,pass,t:none,setvar:tx.combined_file_sizes=65535"
+          SecCollectionTimeout 600
+          SecAction "id:900990,phase:1,nolog,pass,t:none,setvar:tx.crs_setup_version=400"
+          SecRule REQUEST_HEADERS:X-CRS-Test "@rx ^.*$" "id:999999,phase:1,log,msg:'%{MATCHED_VAR}',pass,t:none"
+          EOF
+          docker cp /tmp/crs-setup.conf nginx-nightly:/etc/modsecurity.d/owasp-crs/crs-setup.conf
           docker exec nginx-nightly nginx -s reload
 
           echo "waiting nginx reload"; sleep 5
