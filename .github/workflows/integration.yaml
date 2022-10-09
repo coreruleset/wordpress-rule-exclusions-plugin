@@ -15,8 +15,8 @@ jobs:
 
       - name: "Install dependencies"
         run: |
-          curl -sL https://raw.githubusercontent.com/coreruleset/coreruleset/v4.0/dev/crs-setup.conf.example -o /tmp/crs-setup.conf.example
-          echo $'\nSecAction "id:100,phase:1,nolog,pass,t:none,setvar:tx.paranoia_level=1"\n' >> /tmp/crs-setup.conf.example
+          wget https://github.com/coreruleset/coreruleset/archive/refs/tags/nightly.tar.gz -O /tmp/nightly.tar.gz
+          tar -zxvf /tmp/nightly.tar.gz -C /tmp/
           curl -skLo - https://github.com/coreruleset/go-ftw/releases/latest/download/ftw_Linux_x86_64.tar.gz | tar -xzf - ftw
       
       - name: "Test plugin on ModSecurity v2 / Apache"
@@ -27,9 +27,6 @@ jobs:
 
           docker-compose -f tests/integration/docker-compose.yml --project-directory . up -d apache-nightly
           echo "waiting for the webserver to start"; sleep 10
-
-          echo "inspect container logs"
-          docker logs apache-nightly
 
           ./ftw check -d tests/regression/tests
           ./ftw run -d tests/regression/tests

@@ -26,10 +26,10 @@ services:
     ports:
       - 80:80
     volumes:
+      - /tmp/coreruleset-nightly/rules:/opt/owasp-crs/rules:ro
       - ./tests/logs/modsec2-apache:/var/log:rw
       - ./tests/integration/modsec-setup.conf:/etc/modsecurity.d/setup.conf:ro
       - ./plugins:/etc/modsecurity.d/plugins
-    #entrypoint: ["/bin/sh", "-c", "/bin/cp /etc/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/modsecurity.d/owasp-crs/crs-setup.conf && /docker-entrypoint.sh && apachectl -D FOREGROUND"]
     networks:
       - crs-plugins-net
   
@@ -58,9 +58,9 @@ services:
     ports:
       - 80:80
     volumes:
+      - /tmp/coreruleset-nightly/rules:/opt/owasp-crs/rules:ro
       - ./tests/logs/modsec3-nginx:/var/log/nginx:rw
       - ./plugins:/etc/modsecurity.d/plugins
-    #entrypoint: ["/bin/sh", "-c", "/bin/cp /etc/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/modsecurity.d/owasp-crs/crs-setup.conf && /docker-entrypoint.sh && nginx -g 'daemon off;'"]
     networks:
       - crs-plugins-net
 
