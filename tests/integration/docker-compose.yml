@@ -41,7 +41,7 @@ services:
     depends_on:
       - backend
     environment:
-      SERVERNAME: "_"
+      SERVERNAME: _
       BACKEND: "http://backend:8080"
       PORT: "80"
       MODSEC_RULE_ENGINE: DetectionOnly
@@ -64,7 +64,7 @@ services:
       - /tmp/coreruleset-nightly/crs-setup.conf.example:/etc/modsecurity.d/owasp-crs/crs-setup.conf.example
       - ./tests/logs/modsec3-nginx:/var/log/nginx:rw
       - ./plugins:/etc/modsecurity.d/plugins
-    entrypoint: ["/bin/sh", "-c", "/bin/cp /etc/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/modsecurity.d/owasp-crs/crs-setup.conf && /docker-entrypoint.sh && nginx -g 'daemon off;'"]
+    #entrypoint: ["/bin/sh", "-c", "/bin/cp /etc/modsecurity.d/owasp-crs/crs-setup.conf.example /etc/modsecurity.d/owasp-crs/crs-setup.conf && /docker-entrypoint.sh && nginx -g 'daemon off;'"]
     networks:
       - crs-plugins-net
 
