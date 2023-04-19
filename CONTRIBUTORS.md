@@ -1,6 +1,7 @@
 # Contributors to WordPress Rule Exclusions Plugin
 
 - [agusmu](https://github.com/agusmu)
+- [Esad Cetiner](https://github.com/esadcetiner)
 - [Christian Folini](https://github.com/dune73)
 - [Ervin Hegedus](https://github.com/airween)
 - [Walter Hop](https://github.com/lifeforms)
