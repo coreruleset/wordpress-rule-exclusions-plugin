@@ -3,7 +3,7 @@
 ## Description
 
 This plugin contains rule exclusions for [WordPress](https://wordpress.org/),
-a content management system (CMS), so it can be run flawlessly togather with
+a content management system (CMS), so it can be run flawlessly together with
 OWASP ModSecurity Core Rule Set (CRS).
 
 ## Installation
