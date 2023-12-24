@@ -1,0 +1,39 @@
+---
+meta:
+  author: "Esad Cetiner"
+  description: "Wordpress Rule Exclusions Plugin"
+  enabled: true
+  name: 9507971.yaml.yaml
+tests:
+  - test_title: 9507971-1
+    desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP ModSecurity Core Rule Set
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            uri: /wp-admin/plugin-install.php
+            data: "plugins extend and expand the functionality of wordpress"
+          output:
+            no_log_contains: id "953101"
+  - test_title: 9507971-2
+    desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP ModSecurity Core Rule Set
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            uri: /wp-admin/plugins.php
+            data: "plugins extend and expand the functionality of wordpress"
+          output:
+            no_log_contains: id "953101"
