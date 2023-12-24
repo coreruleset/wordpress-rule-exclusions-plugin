@@ -3,10 +3,10 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507100.yaml.yaml
+  name: 9507900.yaml.yaml
 tests:
   - test_title: 9507100-1
-    desc: Disable OWASP CRS for password
+    desc: Disable 932236 for ARGS:load[chunk_0]
     stages:
       - stage:
           input:
@@ -17,11 +17,11 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-login.php?pwd=<script>
+            uri: /wp-admin/load-scripts.php?load[chunk_0]=jquery-core,jquery-migrate,utils
           output:
-            no_log_contains: id "941110"
+            no_log_contains: id "932236"
   - test_title: 9507100-2
-    desc: Disable 942430 for ARGS:redirect_to
+    desc: Disable 932236 for ARGS:load[chunk_1]
     stages:
       - stage:
           input:
@@ -32,11 +32,11 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-login.php?redirect_to=;;;;;;;;;;;;
+            uri: /wp-admin/load-scripts.php?load[chunk_1]=jquery-core,jquery-migrate,utils
           output:
-            no_log_contains: id "942430"
-  - test_title: 9507100-3
-    desc: Disable 942431 for ARGS:redirect_to
+            no_log_contains: id "932236"
+  - test_title: 9507100-1
+    desc: Disable 932236 for ARGS:load[chunk_0]
     stages:
       - stage:
           input:
@@ -47,11 +47,11 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-login.php?redirect_to=;;;;;;;;;;;;
+            uri: /wp-admin/load-styles.php?load[chunk_0]=jquery-core,jquery-migrate,utils
           output:
-            no_log_contains: id "942431"
-  - test_title: 9507100-4
-    desc: Disable 942432 for ARGS:redirect_to
+            no_log_contains: id "932236"
+  - test_title: 9507100-2
+    desc: Disable 932236 for ARGS:load[chunk_1]
     stages:
       - stage:
           input:
@@ -62,21 +62,6 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-login.php?redirect_to=;;;;;;;;;;;;
-          output:
-            no_log_contains: id "942431"
-  - test_title: 9507100-5
-    desc: Disable 932236 for ARGS_NAMES:pwd
-    stages:
-      - stage:
-          input:
-            dest_addr: 127.0.0.1
-            headers:
-              Host: localhost
-              User-Agent: OWASP ModSecurity Core Rule Set
-              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            port: 80
-            method: POST
-            uri: /wp-login.php?pwd=foo
+            uri: /wp-admin/load-styles.php?load[chunk_1]=jquery-core,jquery-migrate,utils
           output:
             no_log_contains: id "932236"
