@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507971.yaml.yaml
+  name: 9507971.yaml
 tests:
   - test_title: 9507971-1
     desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"
