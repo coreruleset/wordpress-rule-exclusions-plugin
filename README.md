@@ -1,5 +1,4 @@
-# OWASP ModSecurity Core Rule Set - WordPress Rule Exclusions Plugin [![.github/workflows/lint.yml](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/lint.yml) [![.github/workflows/integration.yml](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/integration.yml/badge.svg)](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/integration.yml)
-
+# OWASP ModSecurity Core Rule Set - WordPress Rule Exclusions Plugin [![Linting](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/lint.yml/badge.svg)](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/lint.yml) [![Integration Tests](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/integration.yml/badge.svg)](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/integration.yml)
 ## Description
 
 This plugin contains rule exclusions for [WordPress](https://wordpress.org/),
