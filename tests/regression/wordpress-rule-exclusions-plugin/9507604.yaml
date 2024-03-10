@@ -17,7 +17,7 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /example.js?ver=lsrandom
+            uri: /wp-admin/users.php?s=&ver=lsrandom
           output:
             no_log_contains: id "932236"
   - test_title: 9507604-2
@@ -32,6 +32,6 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /example.js?ver=0x0800random
+            uri: /wp-admin/users.php?s=&ver=0x0800random
           output:
             no_log_contains: id "942450"
