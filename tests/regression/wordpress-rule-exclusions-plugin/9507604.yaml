@@ -1,0 +1,37 @@
+---
+meta:
+  author: "Esad Cetiner"
+  description: "Wordpress Rule Exclusions Plugin"
+  enabled: true
+  name: 9507604.yaml
+tests:
+  - test_title: 9507604-1
+    desc: Disable 932236 for randomly generated nonce
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP CRS
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            uri: /wp-content/themes/themename/static/example.js?ver=lsrandom
+          output:
+            no_log_contains: id "932236"
+  - test_title: 9507604-2
+    desc: Disable 942450 for randomly generated nonce
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP CRS
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            uri: /wp-content/themes/themename/static/example.js?ver=0x0800random
+          output:
+            no_log_contains: id "942450"
