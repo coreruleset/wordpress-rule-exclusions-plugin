@@ -35,5 +35,5 @@ tests:
             method: POST
             uri: /wp-admin/users.php?s=&_wpnonce=random&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
           output:
-            no_log_contains: | 
+            no_log_contains: |
               id "(?:920230|942430|942431|942432)"
