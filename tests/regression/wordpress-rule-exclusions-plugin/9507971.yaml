@@ -13,11 +13,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /wp-admin/plugin-install.php
+            version: "HTTP/1.1"
+            uri: /get/wp-admin/plugin-install.php
             data: "plugins extend and expand the functionality of wordpress"
           output:
             no_log_contains: id "953101"
@@ -29,11 +30,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /wp-admin/plugins.php
+            version: "HTTP/1.1"
+            uri: /get/wp-admin/plugins.php
             data: "plugins extend and expand the functionality of wordpress"
           output:
             no_log_contains: id "953101"
@@ -45,11 +47,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /wp-admin/plugin-install.php
+            version: "HTTP/1.1"
+            uri: /get/wp-admin/plugin-install.php
             data: "Fixed: Call to a member function get_meta() on null error on WooCommerce order received page"
           output:
             no_log_contains: id "953100"
@@ -61,11 +64,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
-            uri: /wp-admin/plugin-install.php
+            version: "HTTP/1.1"
+            uri: /get/wp-admin/plugin-install.php
             data: "warnings</p>\x0a<p>=1.9=<br />\x0a* [Added] Donation link because I&#8217;m poor<br />\x0a* [Removed] errors and deprecating warnings</p>\x0a<p>=1.8.1=<br />\x0a* [Updated] Renamed function from ‚my_profile_update‘ to ‚apg_profile_update‘"
           output:
             no_log_contains: id "951240"
