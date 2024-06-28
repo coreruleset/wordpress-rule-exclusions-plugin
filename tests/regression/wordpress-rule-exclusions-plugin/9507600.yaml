@@ -18,7 +18,7 @@ tests:
             port: 80
             method: GET
             version: "HTTP/1.1"
-            uri: /wp-admin/user-edit.php?user_id=9&wp_http_referer=%2Fwp-admin%2Fusers.php%3Fupdate%3Dadd%26id%3D9
+            uri: /get/wp-admin/user-edit.php?user_id=9&wp_http_referer=%2Fwp-admin%2Fusers.php%3Fupdate%3Dadd%26id%3D9
           output:
             no_log_contains: id "932236"
   - test_title: 9507600-2
