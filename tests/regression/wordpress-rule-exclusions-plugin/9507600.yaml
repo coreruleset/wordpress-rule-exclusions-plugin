@@ -13,10 +13,11 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
+            version: "HTTP/1.1"
             uri: /wp-admin/user-edit.php?user_id=9&wp_http_referer=%2Fwp-admin%2Fusers.php%3Fupdate%3Dadd%26id%3D9
           output:
             no_log_contains: id "932236"
@@ -28,15 +29,16 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
               content-type: application/x-www-form-urlencoded
             port: 80
             method: POST
-            uri: /wp-admin/users.php?s=&_wpnonce=random&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
+            version: "HTTP/1.1"
+            uri: /post/wp-admin/users.php?s=&_wpnonce=random&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
           output:
             no_log_contains: |
-              id "(?:920230|942430|942431|942432)"
+              id "920230" | id "942430" | id "942431" | id "942432"
   - test_title: 9507600-3
     desc: Disable 932236 for randomly generated nonce
     stages:
@@ -45,11 +47,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-admin/users.php?s=&_wpnonce=lsrandom&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
+            version: "HTTP/1.1"
+            uri: /post/wp-admin/users.php?s=&_wpnonce=lsrandom&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
           output:
             no_log_contains: id "932236"
   - test_title: 9507600-4
@@ -60,11 +63,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-admin/users.php?s=&_wpnonce=0x0800random&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
+            version: "HTTP/1.1"
+            uri: /post/wp-admin/users.php?s=&_wpnonce=0x0800random&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
           output:
             no_log_contains: id "942450"
   - test_title: 9507600-5
@@ -74,12 +78,13 @@ tests:
           input:
             dest_addr: 127.0.0.1
             headers:
-              Host: localhost
+              Host: localhost test agent
               User-Agent: OWASP CRS
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-admin/users.php?s=&nonce=lsrandom
+            version: "HTTP/1.1"
+            uri: /post/wp-admin/users.php?s=&nonce=lsrandom
           output:
             no_log_contains: id "932236"
   - test_title: 9507600-6
@@ -90,11 +95,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: POST
-            uri: /wp-admin/users.php?s=&nonce=0x0800random
+            version: "HTTP/1.1"
+            uri: /post/wp-admin/users.php?s=&nonce=0x0800random
           output:
             no_log_contains: id "942450"
   - test_title: 9507600-7
@@ -105,11 +111,12 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
-            method: POST
-            uri: /wp-admin/users.php?s=&ver=lsrandom
+            method: GET
+            version: "HTTP/1.1"
+            uri: /get/example.js?ver=lsrandom
           output:
             no_log_contains: id "932236"
   - test_title: 9507600-8
@@ -120,10 +127,11 @@ tests:
             dest_addr: 127.0.0.1
             headers:
               Host: localhost
-              User-Agent: OWASP CRS
+              User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
-            method: POST
-            uri: /wp-admin/users.php?s=&ver=0x0800random
+            method: GET
+            version: "HTTP/1.1"
+            uri: /get/example.js?ver=0x0000
           output:
             no_log_contains: id "942450"
