@@ -17,6 +17,7 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
+            version: "HTTP/1.1"
             uri: /get/wp-admin/plugin-install.php
             data: "plugins extend and expand the functionality of wordpress"
           output:
@@ -33,6 +34,7 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
+            version: "HTTP/1.1"
             uri: /get/wp-admin/plugins.php
             data: "plugins extend and expand the functionality of wordpress"
           output:
@@ -49,6 +51,7 @@ tests:
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
             method: GET
+            version: "HTTP/1.1"
             uri: /get/wp-admin/plugin-install.php
             data: "Fixed: Call to a member function get_meta() on null error on WooCommerce order received page"
           output:
