@@ -3,9 +3,9 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507791.yaml
+  name: 9507201.yaml
 tests:
-  - test_title: 9507791-1
+  - test_title: 9507201-1
     desc:
     stages:
       - stage:
