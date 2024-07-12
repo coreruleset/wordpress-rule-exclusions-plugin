@@ -46,3 +46,23 @@ tests:
             data: |
               {"id":2934,"styles":{"blocks":{"core/site-title":{"typography":{"fontWeight":"400"}},"core/pullquote":{"typography":{"fontSize":"var(--wp--preset--font-size--large)","fontStyle":"normal","fontWeight":"normal","lineHeight":"1.2"}},"core/quote":{"variations":{"plain":{"typography":{"fontStyle":"normal","fontWeight":"400"}}},"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"var(--wp--preset--font-size--large)","fontStyle":"normal"}},"core/navigation":{"typography":{"fontWeight":"400"}}},"elements":{"button":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"var(--wp--preset--font-size--small)","fontStyle":"normal"}},"heading":{"color":{"background":"#ab5a5a"}}},"css":""}}
             no_log_contains: id "920450"
+  - test_title: 9507146-3
+    desc: Editing widgets
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: "OWASP CRS test agent"
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+              Content-Type: application/json
+              x-http-method-override: PUT
+            port: 80
+            method: POST
+            version: "HTTP/1.1"
+            uri: /post/wp-json/wp/v2/sidebars/sidebar-1?_locale=user
+            data: |
+              {"id":"sidebar-1","widgets":["block-16","block-17","block-18"]}
+          output:
+            no_log_contains: id "920450"
