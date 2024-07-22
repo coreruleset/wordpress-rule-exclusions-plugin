@@ -6,6 +6,8 @@
 This plugin contains rule exclusions for [WordPress](https://wordpress.org/), a content management system (CMS), so it can be run flawlessly together with
 OWASP CRS (CRS).
 
+This plugin only supports functionality provided with vanilla WordPress (without plugins installed). False positives that are due to WordPress plugins must be resolved with [custom rule exclusions](https://coreruleset.org/docs/concepts/false_positives_tuning/).
+
 ## Installation
 
 For full and up to date instructions for the different available plugin
