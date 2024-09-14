@@ -6,7 +6,7 @@ meta:
   name: 9507974.yaml
 tests:
   - test_title: 9507974-1
-    desc: Installing a plugin via an upload zip file
+    desc: Installing a plugin via zip file upload
     stages:
       - stage:
           input:
