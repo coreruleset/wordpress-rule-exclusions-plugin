@@ -14,6 +14,10 @@ For full and up to date instructions for the different available plugin
 installation methods, refer to [How to Install a Plugin](https://coreruleset.org/docs/concepts/plugins/#how-to-install-a-plugin)
 in the official CRS documentation.
 
+### Conditionally enable plugins for multi-application environments
+
+For full and up to date instructions on how to conditionally enable/disable this plugin on a multisite environment, please refer to [Conditionally enable plugins for multi-application environments](https://coreruleset.org/docs/concepts/plugins/#conditionally-enable-plugins-for-multi-application-environments) in the official CRS documentation.
+
 ## Testing
 
 After the plugin is enabled, your WordPress instance should work without any
