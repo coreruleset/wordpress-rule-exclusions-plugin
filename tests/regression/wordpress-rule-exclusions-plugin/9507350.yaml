@@ -20,7 +20,7 @@ tests:
             version: "HTTP/1.1"
             uri: /get/wp-admin/user-edit.php?user_id=9&wp_http_referer=%2Fwp-admin%2Fusers.php%3Fupdate%3Dadd%26id%3D9
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-2
     desc: Deleteing a user account
@@ -38,7 +38,7 @@ tests:
             version: "HTTP/1.1"
             uri: /post/wp-admin/users.php?s=&_wpnonce=random&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-3
     desc: Disable 932236 for randomly generated nonce
@@ -55,7 +55,7 @@ tests:
             version: "HTTP/1.1"
             uri: /post/wp-admin/users.php?s=&_wpnonce=lsrandom&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-4
     desc: Disable 942450 for randomly generated nonce
@@ -72,7 +72,7 @@ tests:
             version: "HTTP/1.1"
             uri: /post/wp-admin/users.php?s=&_wpnonce=0x0800random&_wp_http_referer=%2Fwp-admin%2Fusers.php&action=delete&new_role=&paged=1&users%5B0%5D=9&action2=delete&new_role2=
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-5
     desc: Disable 932236 for randomly generated nonce
@@ -89,7 +89,7 @@ tests:
             version: "HTTP/1.1"
             uri: /post/wp-admin/users.php?s=&nonce=lsrandom
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-6
     desc: Disable 942450 for randomly generated nonce
@@ -106,7 +106,7 @@ tests:
             version: "HTTP/1.1"
             uri: /post/wp-admin/users.php?s=&nonce=0x0800random
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-7
     desc: Requesting a static file with randomly generated version
@@ -123,7 +123,7 @@ tests:
             version: "HTTP/1.1"
             uri: /get/example.js?ver=lsrandom
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-8
     desc: Requesting a static file with randomly generated version
@@ -140,7 +140,7 @@ tests:
             version: "HTTP/1.1"
             uri: /get/example.js?ver=0x0000
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
   - test_title: 9507350-9
     desc: Editing tags
@@ -160,5 +160,5 @@ tests:
             data: |
               _wp_http_referer=/wp-admin/term.php?taxonomy=post_tag&tag_ID=12&post_type=post&wp_http_referer=%2Fwp-admin%2Fedit-tags.php%3Ftaxonomy%3Dpost_tag
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942430"|id "942431"|id "942432"|id "942450"
