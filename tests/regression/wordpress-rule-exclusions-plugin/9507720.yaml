@@ -72,8 +72,8 @@ tests:
 
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="menu-item-classes[3379]"
-              
-              
+
+
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="menu-item-xfn[3379]"
 
@@ -104,7 +104,7 @@ tests:
               1
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="menu-item-type[3379]"
-              
+
               custom
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="save_menu"
