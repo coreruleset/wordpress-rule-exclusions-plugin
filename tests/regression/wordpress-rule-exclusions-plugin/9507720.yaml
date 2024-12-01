@@ -20,7 +20,7 @@ tests:
             method: POST
             version: "HTTP/1.1"
             uri: /post/wp-admin/nav-menus.php?action=edit&menu=88
-            data: >-
+            data: |-
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="nav-menu-data"
 
@@ -72,8 +72,8 @@ tests:
 
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="menu-item-classes[3379]"
-              #
-              #
+              
+              
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="menu-item-xfn[3379]"
 
@@ -104,7 +104,7 @@ tests:
               1
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="menu-item-type[3379]"
-              #
+              
               custom
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="save_menu"
