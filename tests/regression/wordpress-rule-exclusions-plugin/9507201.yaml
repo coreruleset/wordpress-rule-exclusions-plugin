@@ -24,5 +24,5 @@ tests:
               {"validation":"require-all-validate","requests":[{"path":"/wp/v2/widgets","body":{"id_base":"block","instance":{"raw":{"content":"<!-- wp:paragraph -->\n<p>test</p>\n<!--/wp:paragraph -->"}},"sidebar":"sidebar-1"},"method":"POST"},{"path":"/wp/v2/widgets","body":{"id_base":"block","instance":{"raw":{"content":"<!-- wp:search{\"label\":\"Search\",\"buttonText\":\"Search\"} /-->"}},
               "sidebar":"sidebar-1"},"method":"POST"},{"path":"/wp/v2/widgets","body":{"id_base":"block","instance":{"raw":{"content":"<!-- wp:table-->\n<figure class=\"wp-block-table\"><table class=\"has-fixed-layout\"><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table></figure>\n<!-- /wp:table-->"}},"sidebar":"sidebar-1"},"method":"POST"}]}
           output:
-            no_log_contains: |
+            no_log_contains: |-
               id "920272"|id "920273"|id "932200"|id "932236"|id "932240"|id "932370"|id "941150"|id "941180"|id "941181"|id "941320"|id "941330"|id "942130"|id "942131"|id "942200"|id "942210"|id "942260"|id "942330"|id "942340"|id "942370"|id "942430"|id "942431"|id "942432"|id "942440"|id "942460"|id "942520"
