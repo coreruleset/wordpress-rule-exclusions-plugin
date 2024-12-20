@@ -22,5 +22,5 @@ tests:
             uri: /post/wp-admin/admin-ajax.php
             data: |
               log=test&pwd=%3Cscript%3E&redirect_to=https%3A%2F%2Fexample.com%2Fwp-admin%2F&testcookie=1
-            no_log_contains: |
+            no_log_contains: |-
               id "932236"|id "941110"
