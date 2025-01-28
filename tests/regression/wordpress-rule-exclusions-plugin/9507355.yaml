@@ -1,0 +1,41 @@
+---
+meta:
+  author: "Max Leske"
+  description: "Wordpress Rule Exclusions Plugin"
+  enabled: true
+  name: 9507355.yaml
+tests:
+  - test_title: 9507355-1
+    desc: Create new post with classic editor (`referredby`)
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP CRS test agent
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            version: "HTTP/1.1"
+            uri: /wp-admin/post.php
+            body: referredby=https://website.xyz/wp-admin/edit.php?s=user&post_status=all&post_type=post&action=-1&m=0&cat=0&post_format&paged=1&action2=-1
+          output:
+            no_log_contains: id "932235"
+  - test_title: 9507355-2
+    desc: Create new post with classic editor (`_wp_original_http_referer`)
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP CRS test agent
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            version: "HTTP/1.1"
+            uri: /wp-admin/post.php
+            body: _wp_original_http_referer=https://website.xyz/wp-admin/edit.php?s=user&post_status=all&post_type=post&action=-1&m=0&cat=0&post_format&paged=1&action2=-1
+          output:
+            no_log_contains: id "932235"
