@@ -19,7 +19,7 @@ tests:
             method: GET
             version: "HTTP/1.1"
             uri: /wp-admin/post.php
-            body: referredby=https://website.xyz/wp-admin/edit.php?s=user&post_status=all&post_type=post&action=-1&m=0&cat=0&post_format&paged=1&action2=-1
+            data: referredby=https://website.xyz/wp-admin/edit.php?s=user&post_status=all&post_type=post&action=-1&m=0&cat=0&post_format&paged=1&action2=-1
           output:
             no_log_contains: id "932235"
   - test_title: 9507355-2
@@ -36,6 +36,6 @@ tests:
             method: GET
             version: "HTTP/1.1"
             uri: /wp-admin/post.php
-            body: _wp_original_http_referer=https://website.xyz/wp-admin/edit.php?s=user&post_status=all&post_type=post&action=-1&m=0&cat=0&post_format&paged=1&action2=-1
+            data: _wp_original_http_referer=https://website.xyz/wp-admin/edit.php?s=user&post_status=all&post_type=post&action=-1&m=0&cat=0&post_format&paged=1&action2=-1
           output:
             no_log_contains: id "932235"
