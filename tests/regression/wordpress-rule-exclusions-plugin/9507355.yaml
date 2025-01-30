@@ -24,7 +24,6 @@ tests:
           output:
             no_log_contains: |-
               id "920273"|id "932235"|id "932236"|id "942120"|id "942430"|id "942431"|id "942432"
-
   - test_title: 9507355-2
     desc: Create new post with classic editor (`_wp_original_http_referer`)
     stages:
