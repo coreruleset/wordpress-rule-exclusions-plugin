@@ -1,0 +1,37 @@
+---
+meta:
+  author: "Andrea Menin"
+  description: "Test WordPress Exclusion Plugin"
+  enabled: true
+  name: 9507130.yaml
+tests:
+  - test_title: 9507130-1
+    desc: Check FPs on comment
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP ModSecurity Core Rule Set
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            uri: /?url=ftp://foo.bar
+          output:
+            log_contains: id "931130"
+  - test_title: 9507130-2
+    desc: Check FPs on comment
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP ModSecurity Core Rule Set
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            uri: /wp-comments-post.php?url=ftp://foo.bar
+          output:
+            no_log_contains: id "931130"
