@@ -8,6 +8,8 @@ OWASP CRS (CRS).
 
 This plugin only supports functionality provided with vanilla WordPress (without plugins installed). False positives that are due to WordPress plugins must be resolved with [custom rule exclusions](https://coreruleset.org/docs/concepts/false_positives_tuning/).
 
+3rd Party themes are supported for both block based themes and classic site editor themes, however 3rd party theme plugins and builders are not supported, those must be resoved with an [custom rule exclusions](https://coreruleset.org/docs/concepts/false_positives_tuning/).
+
 ## Installation
 
 For full and up to date instructions for the different available plugin
