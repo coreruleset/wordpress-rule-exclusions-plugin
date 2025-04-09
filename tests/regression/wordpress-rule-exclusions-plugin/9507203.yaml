@@ -19,7 +19,7 @@ tests:
             port: 80
             method: POST
             version: "HTTP/1.1"
-            uri: /wp-admin/admin-ajax.php
+            uri: /post/wp-admin/admin-ajax.php
             data: >-
               wp_customize=on&customize_theme=astra&nonce=34ef66fe58&customize_changeset_uuid=c7fd05af-0c4d-465d-a35d-08ddd5748a9b&customize_autosaved=on&customize_changeset_data=%7B%22show_on_front
               %22%3A%7B%22value%22%3A%22posts%22%7D%2C%22astra-settings%5Bsite-layout-outside-bg-obj-responsive%5D%22%3A%7B%22value%22%3A%7B%22desktop%22%3A%7B%22background-color%22%3A%22var(--ast-g
@@ -75,4 +75,4 @@ tests:
               -settings%5Bscroll-to-top-on-devices%5D%22%3A%7B%22value%22%3A%22mobile%22%7D%7D&customize_changeset_autosave=true&action=customize_save&customize_preview_nonce=9a330089e8
           output:
             no_log_contains: |-
-              id "920272"|id "920273"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
+              id "920272"|id "920273"|id "920420"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
