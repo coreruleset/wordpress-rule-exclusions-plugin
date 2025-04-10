@@ -6,7 +6,9 @@ meta:
   name: 9507202.yaml
 tests:
   - test_title: 9507202-1
-    desc: Previewing changes made to site via customizer
+    desc: |
+      Previewing changes made to site via customizer
+      Theme: Astra
     stages:
       - stage:
           input:
@@ -68,6 +70,32 @@ tests:
               mobile-unit%22%3A%22px%22%7D%2C%22astra-typography-presets%22%3A%22typo-preset-06%22%2C%22astra-settings%5Bsite-accessibility-toggle%5D%22%3Afalse%2C%22astra-settings%5Bsingle-post-ast-content-layout%5D%22%3A%22normal-
               width-container%22%2C%22astra-settings%5Bsingle-page-ast-content-layout%5D%22%3A%22default%22%2C%22astra-settings%5Bast-search-content-layout%5D%22%3A%22full-width-container%22%2C%22astra-settings%5Bscroll-to-top-on-de
               vices%5D%22%3A%22mobile%22%7D&customize_messenger_channel=preview-11
+          output:
+            no_log_contains: |-
+              id "920272"|id "920273"|id "920420"|id "921180"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
+  - test_title: 9507202-1
+    desc: |
+      Previewing changes made to site via customizer
+      Theme: Blocksy
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP CRS test agent
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+              Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+            port: 80
+            method: POST
+            version: "HTTP/1.1"
+            uri: /?customize_changeset_uuid=bdf1e7aa-c9bf-4d19-a4b1-54a4fb960085&customize_autosaved=on&customize_preview_nonce=1624b1200d
+            data: >-
+              wp_customize=on&nonce=1624b1200d&customize_theme=blocksy&customized=%7B%22maxSiteWidth%22%3A%221690%22%2C%22contentAreaSpacing%22%3A
+              %22237px%22%2C%22contentEdgeSpacing%22%3A%2210%22%2C%22narrowContainerWidth%22%3A%22570%22%2C%22wideOffset%22%3A%22177%22%2C%22buttonMinHeight%22%3A
+              %2262%22%2C%22breadcrumb_separator%22%3A%22type-3%22%7D&customize_changeset_uuid=bdf1e7aa-c9bf-4d19-a4b1-54a4fb960085&partials=%7B%22breadcrumb_separator%22
+              %3A%5B%7B%7D%5D%7D&wp_customize_render_partials=1&action=&customized=%7B%22maxSiteWidth%22%3A%221690%22%2C%22contentAreaSpacing%22%3A%22237px%22%2C%22contentEdgeSpacing%22
+              %3A%2210%22%2C%22narrowContainerWidth%22%3A%22570%22%2C%22wideOffset%22%3A%22177%22%2C%22buttonMinHeight%22%3A%2262%22%2C%22breadcrumb_separator%22%3A%22type-3%22%7D
           output:
             no_log_contains: |-
               id "920272"|id "920273"|id "920420"|id "921180"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"

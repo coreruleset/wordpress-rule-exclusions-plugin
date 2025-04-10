@@ -6,7 +6,9 @@ meta:
   name: 9507203.yaml
 tests:
   - test_title: 9507203-1
-    desc: Saving changes made via site customizer
+    desc: |
+      Saving changes made via site customizer
+      Theme: Astra
     stages:
       - stage:
           input:
@@ -73,6 +75,36 @@ tests:
               s%5Bsite-accessibility-toggle%5D%22%3A%7B%22value%22%3Afalse%7D%2C%22astra-settings%5Bsingle-post-ast-content-layout%5D%22%3A%7B%22value%22%3A%22normal-width-container%22%7D%2C%22astra-settin
               gs%5Bsingle-page-ast-content-layout%5D%22%3A%7B%22value%22%3A%22default%22%7D%2C%22astra-settings%5Bast-search-content-layout%5D%22%3A%7B%22value%22%3A%22full-width-container%22%7D%2C%22astra
               -settings%5Bscroll-to-top-on-devices%5D%22%3A%7B%22value%22%3A%22mobile%22%7D%7D&customize_changeset_autosave=true&action=customize_save&customize_preview_nonce=9a330089e8
+          output:
+            no_log_contains: |-
+              id "920272"|id "920273"|id "920420"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
+  - test_title: 9507203-2
+    desc: |
+      Saving changes made via site customizer
+      Theme: Blocksy
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP CRS test agent
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+              Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+            port: 80
+            method: POST
+            version: "HTTP/1.1"
+            uri: /post/wp-admin/admin-ajax.php
+            data: >-
+              wp_customize=on&customize_theme=blocksy&nonce=00265d507a&customize_changeset_uuid=bc3de93c-59f1-4501-903d-d8229f2ee7bf&customize_autosaved
+              =on&customized=%7B%22maxSiteWidth%22%3A%221763%22%2C%22contentAreaSpacing%22%3A%22235px%22%2C%22contentEdgeSpacing%22%3A%223%22%2C%
+              22narrowContainerWidth%22%3A%22928%22%2C%22wideOffset%22%3A%2266%22%2C%22buttonMinHeight%22%3A%2273%22%2C%22buttonHoverEffect%22%3A%22yes
+              %22%2C%22buttonTextColor%22%3A%7B%22default%22%3A%7B%22color%22%3A%22%230e0606%22%7D%2C%22hover%22%3A%7B%22color%22%3A%22%23260808%22%7D
+              %7D%2C%22buttonColor%22%3A%7B%22default%22%3A%7B%22color%22%3A%22%23344e7f%22%7D%2C%22hover%22%3A%7B%22color%22%3A%22%231a2745%22%7D%7D
+              %2C%22buttonBorder%22%3A%7B%22width%22%3A1%2C%22style%22%3A%22dashed%22%2C%22color%22%3A%7B%22color%22%3A%22rgba(224%2C+229%2C+235%2C+0.5)
+              %22%7D%2C%22secondColor%22%3A%7B%22color%22%3A%22rgba(224%2C+229%2C+235%2C+0.7)%22%7D%7D%2C%22breadcrumb_separator%22%3A%22type-3%22%2C%22breadcrumbsFontColor
+              %22%3A%7B%22default%22%3A%7B%22color%22%3A%22%23602d2d%22%7D%2C%22initial%22%3A%7B%22color%22%3A%22%235b2424%22%7D%2C%22hover%22%3A%7B%22color%22%3A%22%23852929%22%7D
+              %7D%7D&customize_changeset_status=publish&action=customize_save&customize_preview_nonce=1624b1200d
           output:
             no_log_contains: |-
               id "920272"|id "920273"|id "920420"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
