@@ -73,7 +73,7 @@ tests:
           output:
             no_log_contains: |-
               id "920272"|id "920273"|id "920420"|id "921180"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
-  - test_title: 9507202-1
+  - test_title: 9507202-2
     desc: |
       Previewing changes made to site via customizer
       Theme: Blocksy

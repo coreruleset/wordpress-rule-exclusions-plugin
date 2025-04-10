@@ -96,8 +96,8 @@ tests:
             version: "HTTP/1.1"
             uri: /post/wp-admin/admin-ajax.php
             data: >-
-              wp_customize=on&customize_theme=blocksy&nonce=00265d507a&customize_changeset_uuid=bc3de93c-59f1-4501-903d-d8229f2ee7bf&customize_autosaved
-              =on&customized=%7B%22maxSiteWidth%22%3A%221763%22%2C%22contentAreaSpacing%22%3A%22235px%22%2C%22contentEdgeSpacing%22%3A%223%22%2C%
+              wp_customize=on&customize_theme=blocksy&nonce=00265d507a&customize_changeset_uuid=bc3de93c-59f1-4501-903d-d8229f2ee7bf&customize_autosaved=on
+              &customized=%7B%22maxSiteWidth%22%3A%221763%22%2C%22contentAreaSpacing%22%3A%22235px%22%2C%22contentEdgeSpacing%22%3A%223%22%2C%
               22narrowContainerWidth%22%3A%22928%22%2C%22wideOffset%22%3A%2266%22%2C%22buttonMinHeight%22%3A%2273%22%2C%22buttonHoverEffect%22%3A%22yes
               %22%2C%22buttonTextColor%22%3A%7B%22default%22%3A%7B%22color%22%3A%22%230e0606%22%7D%2C%22hover%22%3A%7B%22color%22%3A%22%23260808%22%7D
               %7D%2C%22buttonColor%22%3A%7B%22default%22%3A%7B%22color%22%3A%22%23344e7f%22%7D%2C%22hover%22%3A%7B%22color%22%3A%22%231a2745%22%7D%7D
