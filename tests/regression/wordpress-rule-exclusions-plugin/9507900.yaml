@@ -1,12 +1,11 @@
 ---
 meta:
   author: "Esad Cetiner"
-  description: "Wordpress Rule Exclusions Plugin"
+  description: "wp-admin: Loading styles/scripts"
   enabled: true
   name: 9507900.yaml
 tests:
   - test_title: 9507900-1
-    desc: Disable 932236 for ARGS:load[chunk_0]
     stages:
       - stage:
           input:
@@ -16,13 +15,13 @@ tests:
               User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
-            method: POST
+            method: GET
             version: "HTTP/1.1"
-            uri: /post/wp-admin/load-scripts.php?load[chunk_0]=jquery-core,jquery-migrate,utils
+            uri: /get/wp-admin/load-scripts.php?load[chunk_0]=jquery-core,jquery-migrate,utils
           output:
-            no_log_contains: id "932236"
+            no_log_contains: |-
+              id "932236"|id "942360"|id "942430"|id "942431"|id "942432"
   - test_title: 9507900-2
-    desc: Disable 932236 for ARGS:load[chunk_1]
     stages:
       - stage:
           input:
@@ -32,13 +31,13 @@ tests:
               User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
-            method: POST
+            method: GET
             version: "HTTP/1.1"
-            uri: /post/wp-admin/load-scripts.php?load[chunk_1]=jquery-core,jquery-migrate,utils
+            uri: /get/wp-admin/load-scripts.php?load[chunk_1]=jquery-core,jquery-migrate,utils
           output:
-            no_log_contains: id "932236"
+            no_log_contains: |-
+              id "932236"|id "942360"|id "942430"|id "942431"|id "942432"
   - test_title: 9507900-3
-    desc: Disable 932236 for ARGS:load[chunk_0]
     stages:
       - stage:
           input:
@@ -48,13 +47,13 @@ tests:
               User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
-            method: POST
+            method: GET
             version: "HTTP/1.1"
-            uri: /post/wp-admin/load-styles.php?load[chunk_0]=jquery-core,jquery-migrate,utils
+            uri: /get/wp-admin/load-styles.php?load[chunk_0]=jquery-core,jquery-migrate,utils
           output:
-            no_log_contains: id "932236"
+            no_log_contains: |-
+              id "932236"|id "942360"|id "942430"|id "942431"|id "942432"
   - test_title: 9507900-4
-    desc: Disable 932236 for ARGS:load[chunk_1]
     stages:
       - stage:
           input:
@@ -64,8 +63,25 @@ tests:
               User-Agent: OWASP CRS test agent
               Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             port: 80
-            method: POST
+            method: GET
             version: "HTTP/1.1"
-            uri: /post/wp-admin/load-styles.php?load[chunk_1]=jquery-core,jquery-migrate,utils
+            uri: /get/wp-admin/load-styles.php?load[chunk_1]=jquery-core,jquery-migrate,utils
           output:
-            no_log_contains: id "932236"
+            no_log_contains: |-
+              id "932236"|id "942360"|id "942430"|id "942431"|id "942432"
+  - test_title: 9507900-5
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: OWASP CRS test agent
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: GET
+            version: "HTTP/1.1"
+            uri: /get/wp-admin/load-styles.php?c=1&dir=ltr&load%5Bchunk_0%5D=dashicons,common,forms,admin-menu,dashboard,list-tables,edit,revisions,media,themes,about,nav-menus,wp-pointer,widgets,site-icon&load%5Bchunk_1%5D=,l10n,buttons,customize-controls,customize-widgets,wp-block-library,wp-components,wp-widgets,wp-preferences,wp-block-editor,wp-r&load%5Bchunk_2%5D=eusable-blocks,wp-patterns,wp-editor,wp-reset-editor-styles,wp-block-editor-content,wp-editor-classic-layout-styles,wp-edit-bloc&load%5Bchunk_3%5D=ks,wp-customize-widgets,wp-block-directory,wp-format-library,customize-nav-menus,media-views,code-editor,wp-color-picker&ver=6.7.2
+          output:
+            no_log_contains: |-
+              id "932236"|id "942360"|id "942430"|id "942431"|id "942432"
