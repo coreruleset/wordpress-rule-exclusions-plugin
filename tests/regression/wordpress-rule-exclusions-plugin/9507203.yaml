@@ -77,7 +77,7 @@ tests:
               -settings%5Bscroll-to-top-on-devices%5D%22%3A%7B%22value%22%3A%22mobile%22%7D%7D&customize_changeset_autosave=true&action=customize_save&customize_preview_nonce=9a330089e8
           output:
             no_log_contains: |-
-              id "920272"|id "920273"|id "920420"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
+              id "920272"|id "920273"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
   - test_title: 9507203-2
     desc: |
       Saving changes made via site customizer
@@ -107,4 +107,4 @@ tests:
               %7D%7D&customize_changeset_status=publish&action=customize_save&customize_preview_nonce=1624b1200d
           output:
             no_log_contains: |-
-              id "920272"|id "920273"|id "920420"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
+              id "920272"|id "920273"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"

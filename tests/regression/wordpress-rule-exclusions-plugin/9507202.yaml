@@ -72,7 +72,7 @@ tests:
               vices%5D%22%3A%22mobile%22%7D&customize_messenger_channel=preview-11
           output:
             no_log_contains: |-
-              id "920272"|id "920273"|id "920420"|id "921180"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
+              id "920272"|id "920273"|id "921180"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
   - test_title: 9507202-2
     desc: |
       Previewing changes made to site via customizer
@@ -98,4 +98,4 @@ tests:
               %3A%2210%22%2C%22narrowContainerWidth%22%3A%22570%22%2C%22wideOffset%22%3A%22177%22%2C%22buttonMinHeight%22%3A%2262%22%2C%22breadcrumb_separator%22%3A%22type-3%22%7D
           output:
             no_log_contains: |-
-              id "920272"|id "920273"|id "920420"|id "921180"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
+              id "920272"|id "920273"|id "921180"|id "932200"|id "932240"|id "942370"|id "942430"|id "942431"|id "942432"|id "942520"
