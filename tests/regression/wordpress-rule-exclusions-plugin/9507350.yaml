@@ -1,6 +1,6 @@
 ---
 meta:
-  author: "Esad Cetiner"
+  author: "azurit, Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
   name: 9507350.yaml
@@ -179,3 +179,20 @@ tests:
           output:
             no_log_contains: |-
               id "920230"|id "932235"|id "932236"|id "942120"|id "942430"|id "942431"|id "942432"|id "942450"
+  - test_title: 9507350-11
+    desc:
+    stages:
+      - stage:
+          input:
+            dest_addr: 127.0.0.1
+            headers:
+              Host: localhost
+              User-Agent: "OWASP CRS test agent"
+              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            port: 80
+            method: POST
+            version: "HTTP/1.1"
+            uri: /post/wp-admin/admin-ajax.php
+            data: action=search-install-plugins&s=%20Insert%20Headers%20and%20Footers
+          output:
+            no_log_contains: id "942360"
