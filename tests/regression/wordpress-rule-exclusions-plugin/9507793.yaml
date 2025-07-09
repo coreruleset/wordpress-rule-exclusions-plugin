@@ -19,6 +19,6 @@ tests:
             method: GET
             version: "HTTP/1.1"
             uri: /post/wp-admin/admin-ajax.php
-            data: shortcode=[embed]https://example.com/file.xhtml[/embed]
+            data: action=parse-embed&shortcode=[embed]https://example.com/file.xhtml[/embed]
           output:
             no_log_contains: id "941130"
