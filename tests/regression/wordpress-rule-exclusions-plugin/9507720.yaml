@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507720.yaml
+  rule_id: 9507720
 tests:
   - test_id: 1
     desc: Editing nav menus
@@ -112,4 +112,24 @@ tests:
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip--
           output:
             log:
-              no_expect_ids: [920273, 921220, 921180, 931130, 932150, 932200, 932240, 941330, 941340, 942200, 942260, 942330, 942340, 942370, 942430, 942431, 942432, 942460, 942490, 942520]
+              no_expect_ids:
+                - 920273
+                - 921220
+                - 921180
+                - 931130
+                - 932150
+                - 932200
+                - 932240
+                - 941330
+                - 941340
+                - 942200
+                - 942260
+                - 942330
+                - 942340
+                - 942370
+                - 942430
+                - 942431
+                - 942432
+                - 942460
+                - 942490
+                - 942520

@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507149.yaml
+  rule_id: 9507149
 tests:
   - test_id: 1
     desc: Disable 931130 for ARGS:url if ARGS:rest_route=/wp-block-editor/v1/url-details

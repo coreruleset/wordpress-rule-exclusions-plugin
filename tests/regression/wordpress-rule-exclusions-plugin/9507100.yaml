@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507100.yaml
+  rule_id: 9507100
 tests:
   - test_id: 1
     desc: Disable OWASP CRS for password and 932236 for ARGS_NAMES:pwd
@@ -20,7 +20,9 @@ tests:
           uri: /post/wp-login.php?pwd=<script>
         output:
           log:
-            no_expect_ids: [932236, 941110]
+            no_expect_ids:
+              - 932236
+              - 941110
   - test_id: 2
     desc: ARGS:redirect_to tends to contain multiple special characters since it'll include the redirect URL
     stages:
@@ -36,4 +38,7 @@ tests:
           uri: /post/wp-login.php?redirect_to=;;;;;;;;;;;;
         output:
           log:
-            no_expect_ids: [942430, 942431, 942432]
+            no_expect_ids:
+              - 942430
+              - 942431
+              - 942432

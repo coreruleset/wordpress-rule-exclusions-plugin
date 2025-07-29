@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507201.yaml
+  rule_id: 9507201
 tests:
   - test_id: 1
     desc:
@@ -24,4 +24,29 @@ tests:
             "sidebar":"sidebar-1"},"method":"POST"},{"path":"/wp/v2/widgets","body":{"id_base":"block","instance":{"raw":{"content":"<!-- wp:table-->\n<figure class=\"wp-block-table\"><table class=\"has-fixed-layout\"><tbody><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table></figure>\n<!-- /wp:table-->"}},"sidebar":"sidebar-1"},"method":"POST"}]}
         output:
           log:
-            no_expect_ids: [920272, 920273, 932200, 932236, 932240, 932370, 941150, 941180, 941181, 941320, 941330, 942130, 942131, 942200, 942210, 942260, 942330, 942340, 942370, 942430, 942431, 942432, 942440, 942460, 942520]
+            no_expect_ids:
+              - 920272
+              - 920273
+              - 932200
+              - 932236
+              - 932240
+              - 932370
+              - 941150
+              - 941180
+              - 941181
+              - 941320
+              - 941330
+              - 942130
+              - 942131
+              - 942200
+              - 942210
+              - 942260
+              - 942330
+              - 942340
+              - 942370
+              - 942430
+              - 942431
+              - 942432
+              - 942440
+              - 942460
+              - 942520

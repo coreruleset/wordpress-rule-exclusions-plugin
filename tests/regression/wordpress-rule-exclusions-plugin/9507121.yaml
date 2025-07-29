@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507121.yaml
+  rule_id: 9507121
 tests:
   - test_id: 1
     desc: Logging into WordPress
@@ -23,4 +23,6 @@ tests:
             log=test&pwd=%3Cscript%3E&redirect_to=https%3A%2F%2Fexample.com%2Fwp-admin%2F&testcookie=1
         output:
           log:
-            no_expect_ids: [932236, 941110]
+            no_expect_ids:
+              - 932236
+              - 941110

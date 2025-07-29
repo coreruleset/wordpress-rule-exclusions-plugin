@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507202.yaml
+  rule_id: 9507202
 tests:
   - test_id: 1
     desc: |
@@ -71,7 +71,17 @@ tests:
             vices%5D%22%3A%22mobile%22%7D&customize_messenger_channel=preview-11
         output:
           log:
-            no_expect_ids: [920272, 920273, 921180, 932200, 932240, 942370, 942430, 942431, 942432, 942520]
+            no_expect_ids:
+              - 920272
+              - 920273
+              - 921180
+              - 932200
+              - 932240
+              - 942370
+              - 942430
+              - 942431
+              - 942432
+              - 942520
   - test_id: 2
     desc: |
       Previewing changes made to site via customizer
@@ -96,4 +106,14 @@ tests:
             %3A%2210%22%2C%22narrowContainerWidth%22%3A%22570%22%2C%22wideOffset%22%3A%22177%22%2C%22buttonMinHeight%22%3A%2262%22%2C%22breadcrumb_separator%22%3A%22type-3%22%7D
         output:
           log:
-            no_expect_ids: [920272, 920273, 921180, 932200, 932240, 942370, 942430, 942431, 942432, 942520]
+            no_expect_ids:
+              - 920272
+              - 920273
+              - 921180
+              - 932200
+              - 932240
+              - 942370
+              - 942430
+              - 942431
+              - 942432
+              - 942520

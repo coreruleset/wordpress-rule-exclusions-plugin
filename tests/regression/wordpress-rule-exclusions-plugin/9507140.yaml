@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507140.yaml
+  rule_id: 9507140
 tests:
   - test_id: 1
     desc: Editing template part of a website i.e header or footer
@@ -27,4 +27,21 @@ tests:
             <!-- wp:site-logo{\"width\":60,\"shouldSyncIcon\":false} /-->\n\n<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"0px\"}}} -->\n<div class=\"wp-block-group\"><!-- wp:site-title {\"level\":0} /--></div>\n<!-- /wp:group--></div>\n<!-- /wp:group -->\n\n<!-- wp:navigation{\"ref\":2180,\"icon\":\"menu\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"right\",\"orientation\":\"horizontal\",\"flexWrap\":\"wrap\"},\"style\":{\"spacing\":{\"margin\":{\"top\":\"0\"},\"blockGap\":\"va>/--></div>\n<!-- /wp:group -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->"}
         output:
           log:
-            no_expect_ids: [932240, 932236, 941100, 941150, 941160, 941180, 941181, 941320, 942210, 942330, 942340, 942370, 942430, 942431, 942432, 942440, 942520]
+            no_expect_ids: 
+              - 932240
+              - 932236
+              - 941100
+              - 941150
+              - 941160
+              - 941180
+              - 941181
+              - 941320
+              - 942210
+              - 942330
+              - 942340
+              - 942370
+              - 942430
+              - 942431
+              - 942432
+              - 942440
+              - 942520

@@ -3,7 +3,7 @@ meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
   enabled: true
-  name: 9507139.yaml
+  rule_id: 9507139
 tests:
   - test_id: 1
     desc: Editing global styles for a theme
@@ -24,7 +24,9 @@ tests:
             {"id":2934,"styles":{"blocks":{"core/site-title":{"typography":{"fontWeight":"400"}},"core/pullquote":{"typography":{"fontSize":"var(--wp--preset--font-size--large)","fontStyle":"normal","fontWeight":"normal","lineHeight":"1.2"}},"core/quote":{"variations":{"plain":{"typography":{"fontStyle":"normal","fontWeight":"400"}}},"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"var(--wp--preset--font-size--large)","fontStyle":"normal"}},"core/navigation":{"typography":{"fontWeight":"400"}}},"elements":{"button":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"var(--wp--preset--font-size--small)","fontStyle":"normal"}},"heading":{"color":{"background":"#ab5a5a"}}},"css":""}}
         output:
           log:
-            no_expect_ids: [942100, 942440]
+            no_expect_ids:
+              - 942100
+              - 942440
   - test_id: 2
     desc: Editing global styles for shadows
     stages:
@@ -44,4 +46,7 @@ tests:
             {"id":3327,"styles":{"blocks":{"core/code":{"typography":{"fontStyle":"normal","fontWeight":"300"},"color":{"text":"var:preset|color|custom-white","background":"var:preset|color|custom-light-black"}},"core/read-more":{"color":{"text":"var:preset|color|base","background":"var:preset|color|custom-orange"},"elements":{"link":{"color":{"text":"var:preset|color|base"}}},"border":{"top":{"color":"var:preset|color|custom-orange","style":"solid","width":"18px"},"right":{"color":"var:preset|color|custom-orange","style":"solid","width":"18px"},"bottom":{"color":"var:preset|color|custom-orange","style":"solid","width":"18px"},"left":{"color":"var:preset|color|custom-orange","style":"solid","width":"18px"},"radius":"18px"}},"core/button":{"color":{"text":"var:preset|color|custom-white","background":"var:preset|color|custom-orange"},"elements":{"link":{"color":{"text":"var:preset|color|custom-white"}}},"border":{"radius":"16px"},"shadow":"var:preset|shadow|natural"}}}}
         output:
           log:
-            no_expect_ids: [932220, 932235, 932236]
+            no_expect_ids:
+              - 932220
+              - 932235
+              - 932236
