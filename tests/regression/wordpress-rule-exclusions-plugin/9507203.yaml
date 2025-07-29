@@ -76,7 +76,7 @@ tests:
             -settings%5Bscroll-to-top-on-devices%5D%22%3A%7B%22value%22%3A%22mobile%22%7D%7D&customize_changeset_autosave=true&action=customize_save&customize_preview_nonce=9a330089e8
         output:
           log:
-            no_expect_ids: 
+            no_expect_ids:
               - 920272
               - 920273
               - 932200
@@ -114,7 +114,7 @@ tests:
             %7D%7D&customize_changeset_status=publish&action=customize_save&customize_preview_nonce=1624b1200d
         output:
           log:
-            no_expect_ids: 
+            no_expect_ids:
               - 920272
               - 920273
               - 932200
