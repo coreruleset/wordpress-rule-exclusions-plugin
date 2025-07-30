@@ -2,7 +2,6 @@
 meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-  enabled: true
   rule_id: 9507146
 tests:
   - test_id: 1

@@ -2,7 +2,6 @@
 meta:
   author: "azurit"
   description: "Wordpress Rule Exclusions Plugin"
-  enabled: true
   rule_id: 9507793
 tests:
   - test_id: 1
