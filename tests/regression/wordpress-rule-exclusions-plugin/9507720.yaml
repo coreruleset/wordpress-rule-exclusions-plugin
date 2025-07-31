@@ -2,27 +2,25 @@
 meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-  enabled: true
-  name: 9507720.yaml
+rule_id: 9507720
 tests:
-  - test_title: 9507720-1
+  - test_id: 1
     desc: Editing nav menus
     stages:
-      - stage:
-          input:
-            dest_addr: 127.0.0.1
-            headers:
-              Host: localhost
-              User-Agent: OWASP CRS test agent
-              Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-              Content-Type: multipart/form-data; boundary=----WebKitFormBoundarydt8oBU5AFeiNO3ip
-            port: 80
-            method: POST
-            version: "HTTP/1.1"
-            uri: /post/wp-admin/nav-menus.php?action=edit&menu=88
-            data: |-
-              ------WebKitFormBoundarydt8oBU5AFeiNO3ip
-              Content-Disposition: form-data; name="nav-menu-data"
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: OWASP CRS test agent
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Content-Type: multipart/form-data; boundary=----WebKitFormBoundarydt8oBU5AFeiNO3ip
+          port: 80
+          method: POST
+          version: "HTTP/1.1"
+          uri: /post/wp-admin/nav-menus.php?action=edit&menu=88
+          data: |-
+            ------WebKitFormBoundarydt8oBU5AFeiNO3ip
+            Content-Disposition: form-data; name="nav-menu-data"
 
               [{"name":"nav-menu-data","value":""},{"name":"closedpostboxesnonce","value":"edcabbebb5"},{"name":"meta-box-order-nonce","value":"b12b971c86"},{"name":"update-nav-menu-nonce",
               "value":"8e181e54f1"},{"name":"_wp_http_referer","value":"/wp-admin/nav-menus.php?action=edit&menu=88"},{"name":"action","value":"update"},{"name":"menu","value":"88"},
@@ -112,5 +110,25 @@ tests:
               Save Menu
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip--
           output:
-            no_log_contains: |-
-              id "920273"|id "921220"|id "921180"|id "931130"|id "932150"|id "932200"|id "932240"|id "941330"|id "941340"|id "942200"|id "942260"|id "942330"|id "942340"|id "942370"|id "942430"|id "942431"|id "942432"|id "942460"|id "942490"|id "942520"
+            log:
+              no_expect_ids:
+                - 920273
+                - 921220
+                - 921180
+                - 931130
+                - 932150
+                - 932200
+                - 932240
+                - 941330
+                - 941340
+                - 942200
+                - 942260
+                - 942330
+                - 942340
+                - 942370
+                - 942430
+                - 942431
+                - 942432
+                - 942460
+                - 942490
+                - 942520
