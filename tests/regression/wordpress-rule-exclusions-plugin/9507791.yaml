@@ -2,7 +2,7 @@
 meta:
   author: "azurit"
   description: "Wordpress Rule Exclusions Plugin"
-  rule_id: 9507791
+rule_id: 9507791
 tests:
   - test_id: 1
     desc: Disable 932100 for ARGS:changes[caption]

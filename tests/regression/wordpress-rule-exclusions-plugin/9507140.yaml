@@ -2,7 +2,7 @@
 meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-  rule_id: 9507140
+rule_id: 9507140
 tests:
   - test_id: 1
     desc: Editing template part of a website i.e header or footer

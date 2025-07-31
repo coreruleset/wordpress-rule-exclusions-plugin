@@ -2,7 +2,7 @@
 meta:
   author: "Esad Cetiner"
   description: "wp-admin: Loading styles/scripts"
-  rule_id: 9507900
+rule_id: 9507900
 tests:
   - test_id: 1
     stages:

@@ -2,7 +2,7 @@
 meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-  rule_id: 9507147
+rule_id: 9507147
 tests:
   - test_id: 1
     desc: Disable 932236 if ARGS:_fields contains id

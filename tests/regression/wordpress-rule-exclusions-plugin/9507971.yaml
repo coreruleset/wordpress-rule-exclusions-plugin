@@ -2,7 +2,7 @@
 meta:
   author: "Esad Cetiner, azurit"
   description: "Wordpress Rule Exclusions Plugin"
-  rule_id: 9507971
+rule_id: 9507971
 tests:
   - test_id: 1
     desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"

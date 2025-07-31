@@ -2,7 +2,7 @@
 meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-  rule_id: 9507139
+rule_id: 9507139
 tests:
   - test_id: 1
     desc: Editing global styles for a theme

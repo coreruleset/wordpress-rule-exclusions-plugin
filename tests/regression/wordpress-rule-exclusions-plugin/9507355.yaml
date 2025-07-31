@@ -2,7 +2,7 @@
 meta:
   author: "Max Leske"
   description: "Wordpress Rule Exclusions Plugin"
-  rule_id: 9507355
+rule_id: 9507355
 tests:
   - test_id: 1
     desc: Create new post with classic editor (`referredby`)
