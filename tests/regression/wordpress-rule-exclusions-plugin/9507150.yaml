@@ -2,7 +2,7 @@
 meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-rule_id: 9507701
+rule_id: 9507150
 tests:
   - test_id: 1
     desc: Adding hyperlinks in pages/posts
@@ -14,7 +14,7 @@ tests:
             User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
           port: 80
-          method: POST
+          method: GET
           version: "HTTP/1.1"
           uri: /wp-json/wp-block-editor/v1/url-details?url=https%3A%2F%2Foffsite-domain.com&_locale=user
         output:
