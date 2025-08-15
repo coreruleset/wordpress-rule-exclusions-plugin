@@ -1,6 +1,6 @@
 ---
 meta:
-  author: "Max Leske"
+  author: "Max Leske, Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
 rule_id: 9507141
 tests:
