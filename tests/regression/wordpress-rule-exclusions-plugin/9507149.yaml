@@ -19,4 +19,9 @@ tests:
           uri: /get/index.php?rest_route=%2Fwp-block-editor%2Fv1%2Furl-details&url=https%3A%2F%2Foffsite-domain.com%
         output:
           log:
-            no_expect_ids: [931130]
+            no_expect_ids:
+              - 920272
+              - 920273
+              - 931130
+              - 942431
+              - 942432

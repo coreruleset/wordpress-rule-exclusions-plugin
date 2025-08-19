@@ -22,6 +22,9 @@ tests:
             no_expect_ids:
               - 932236
               - 941110
+              - 942430
+              - 942431
+              - 942432
   - test_id: 2
     desc: ARGS:redirect_to tends to contain multiple special characters since it'll include the redirect URL
     stages:
@@ -38,6 +41,8 @@ tests:
         output:
           log:
             no_expect_ids:
+              - 932236
+              - 941110
               - 942430
               - 942431
               - 942432
@@ -62,3 +67,6 @@ tests:
             no_expect_ids:
               - 932236
               - 941110
+              - 942430
+              - 942431
+              - 942432
