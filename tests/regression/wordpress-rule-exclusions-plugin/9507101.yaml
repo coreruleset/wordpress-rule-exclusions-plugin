@@ -2,10 +2,10 @@
 meta:
   author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-rule_id: 9507121
+rule_id: 9507101
 tests:
   - test_id: 1
-    desc: Logging into WordPress
+    desc: Entering new password for password reset
     stages:
       - input:
           dest_addr: 127.0.0.1
@@ -13,15 +13,19 @@ tests:
             Host: localhost
             User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
-            Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+            Content-Type: application/x-www-form-urlencoded
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /post/wp-admin/admin-ajax.php
-          data: |
-            log=test&pwd=%3Cscript%3E&redirect_to=https%3A%2F%2Fexample.com%2Fwp-admin%2F&testcookie=1
+          uri: /wp-login.php?action=resetpass
+          data: |-
+            pass1=<script>&rp_key=somethingRandom&wp-submit=Save+Password
         output:
           log:
             no_expect_ids:
+              - 920273
               - 932236
               - 941110
+              - 942430
+              - 942431
+              - 942432
