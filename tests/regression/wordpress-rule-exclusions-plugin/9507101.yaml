@@ -46,5 +46,4 @@ tests:
             nopass1=exec%28%2Fbin%2Fbash%29%3B&nopass1-text=exec%28%2Fbin%2Fbash%29%3B&nopass2=exec%28%2Fbin%2Fbash%29%3B
         output:
           log:
-            expect_ids:
-              - 932160
+            expect_ids: [932160]
