@@ -41,3 +41,22 @@ tests:
               - 942430
               - 942431
               - 942432
+  - test_id: 3
+    desc: Block payloads in non-excluded ARGS
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: OWASP CRS test agent
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+          port: 80
+          method: POST
+          version: "HTTP/1.1"
+          uri: /post/wp-login.php
+          data: |
+            log=admin&notpwd=exec%28%2Fbin%2Fbash%29%3B
+        output:
+          log:
+            expect_ids:
+              - 932160
