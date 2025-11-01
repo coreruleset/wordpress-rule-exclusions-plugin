@@ -92,7 +92,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /post/wp-login.php
-          data: |
+          data: |-
             log=admin&notpwd=exec%28%2Fbin%2Fbash%29%3B
         output:
           log:
