@@ -96,5 +96,4 @@ tests:
             log=admin&notpwd=exec%28%2Fbin%2Fbash%29%3B
         output:
           log:
-            expect_ids:
-              - 932160
+            expect_ids: [932160]
