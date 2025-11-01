@@ -42,7 +42,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /post/wp-json/wp/v2/global-styles/1?wp_theme_preview=twentytwentyfour&_locale=user
-          data: >-
+          data: |-
             {"id":2934,"styles":{"blocks":{"core/site-title":{"typography":{"fontWeight":"400"}},"core/pullquote":{"typography":{"fontSize":"var(--wp--preset--font-size--large)","fontStyle":"normal","fontWeight":"normal","lineHeight":"1.2"}},"core/quote":{"variations":{"plain":{"typography":{"fontStyle":"normal","fontWeight":"400"}}},"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"var(--wp--preset--font-size--large)","fontStyle":"normal"}},"core/navigation":{"typography":{"fontWeight":"400"}}},"elements":{"button":{"typography":{"fontFamily":"var(--wp--preset--font-family--heading)","fontSize":"var(--wp--preset--font-size--small)","fontStyle":"normal"}},"heading":{"color":{"background":"#ab5a5a"}}},"css":""}}
         output:
           log:
@@ -62,7 +62,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /post/wp-json/wp/v2/sidebars/sidebar-1?_locale=user
-          data: >-
+          data: |-
             {"id":"sidebar-1","widgets":["block-16","block-17","block-18"]}
         output:
           log:
@@ -82,7 +82,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /wp-json/wp/v2/posts/1&_locale=user
-          data: >-
+          data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
           log:
@@ -120,7 +120,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /index.php/wp-json/wp/v2/posts/1&_locale=user
-          data: >-
+          data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
           log:
@@ -140,7 +140,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /subdir/wordpress-here/wp-json/wp/v2/posts/1&_locale=user
-          data: >-
+          data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
           log:

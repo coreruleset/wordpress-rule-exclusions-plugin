@@ -65,7 +65,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /index.php?rest_route=/wp/v2/sidebars/sidebar-1&_locale=user
-          data: >-
+          data: |-
             {"id":"sidebar-1","widgets":["search-2","recent-posts-2","recent-comments-2","archives-2","categories-2","meta-2","block-2","block-3"]}
         output:
           log:
@@ -85,7 +85,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /index.php?rest_route=/wp/v2/posts/1&_locale=user
-          data: >-
+          data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
           log:
