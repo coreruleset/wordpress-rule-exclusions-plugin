@@ -1,0 +1,44 @@
+---
+meta:
+  author: "azurit"
+  description: "Wordpress Rule Exclusions Plugin"
+rule_id: 9507120
+tests:
+  - test_id: 1
+    desc: Block non-excluded ARGS
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: OWASP CRS test agent
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+          port: 80
+          method: POST
+          version: "HTTP/1.1"
+          uri: /post/wp-login.php?action=resetpass
+          data: |
+            nopass1=exec%28%2Fbin%2Fbash%29%3B&nopass1-text=exec%28%2Fbin%2Fbash%29%3B&nopass2=exec%28%2Fbin%2Fbash%29%3B
+        output:
+          log:
+            expect_ids:
+              - 932160
+  - test_id: 2
+    desc: Check FPs on reset password
+    stages:
+      - input:
+          dest_addr: 127.0.0.1
+          headers:
+            Host: localhost
+            User-Agent: OWASP CRS test agent
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+          port: 80
+          method: POST
+          version: "HTTP/1.1"
+          uri: /post/wp-login.php?action=resetpass
+          data: |
+            pass1=exec%28%2Fbin%2Fbash%29%3B&pass1-text=exec%28%2Fbin%2Fbash%29%3B&pass2=exec%28%2Fbin%2Fbash%29%3B
+        output:
+          log:
+            no_expect_ids:
+              - 932160
