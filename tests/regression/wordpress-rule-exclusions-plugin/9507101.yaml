@@ -42,7 +42,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /post/wp-login.php?action=resetpass
-          data: |
+          data: |-
             nopass1=exec%28%2Fbin%2Fbash%29%3B&nopass1-text=exec%28%2Fbin%2Fbash%29%3B&nopass2=exec%28%2Fbin%2Fbash%29%3B
         output:
           log:
