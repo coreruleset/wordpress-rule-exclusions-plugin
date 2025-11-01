@@ -36,5 +36,4 @@ tests:
           uri: /get/wp-comments-post.php?url=ftp://foo.bar
         output:
           log:
-            no_expect_ids:
-              - 931130
+            no_expect_ids: [931130]
