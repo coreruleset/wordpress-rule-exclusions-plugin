@@ -2,7 +2,7 @@
 meta:
   author: "azurit"
   description: "Wordpress Rule Exclusions Plugin"
-rule_id: 9507120
+rule_id: 9507101
 tests:
   - test_id: 1
     desc: Block non-excluded ARGS
