@@ -19,8 +19,7 @@ tests:
           uri: /get/?url=ftp://foo.bar
         output:
           log:
-            expect_ids:
-              - 931130
+            expect_ids: [931130]
   - test_id: 2
     desc: Check FPs on comment
     stages:
