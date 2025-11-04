@@ -19,7 +19,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           # URI is actually sent with double slashes
-          uri: /index.php?rest_route=/wp/v2/template-parts/twentytwentyfour//header&_locale=user
+          uri: /post/index.php?rest_route=/wp/v2/template-parts/twentytwentyfour//header&_locale=user
           # Data is sent with some special characters escaped
           data: >-
             {"id":"twentytwentyfour//header","content":"<!-- wp:group {\"align\":\"wide\",\"style\":{\"spacing\":{\"padding\":{\"top\":\"20px\",\"bottom\":\"20px\"}}},\"backgroundColor\":\"base\",\"layout\":{\"type\":\"constrained\"}} -->\n<div class=\"wp-block-group alignwide has-base-background-color has-background\" style=\"padding-top:20px;padding-bottom:20px\"><!-- wp:group {\"align\":\"wide\",\"layout\":{\"type\":\"flex\",\"justifyContent\":\"space-between\",\"flexWrap\":\"wrap\"}} -->\n<div class=\"wp-block-group alignwide\"><!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"var:preset|spacing|20\"},\"layout\":{\"selfStretch\":\"fit\",\"flexSize\":null}},\"layout\":{\"type\":\"flex\"}} -->\n<div class=\"wp-block-group\"><!-- wp:site-logo {\"width\":60} /-->\n\n<!-- wp:group {\"style\":{\"spacing\":{\"blockGap\":\"0px\"}}} -->\n<div class=\"wp-block-group\">
@@ -41,7 +41,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /index.php?rest_route=/wp/v2/global-styles/26&_locale=user
+          uri: /post/index.php?rest_route=/wp/v2/global-styles/26&_locale=user
           data: >-
             {"id":26,"settings":{"color":{"duotone":{"theme":[{"colors":["#272727","#f9f9f9"],"slug":"duotone-1","name":"Donkergrijs en wit"},{"colors":["#272727","#5F584F"],"slug":"duotone-2","name":"Donkergrijs en walnoot"},{"colors":["#272727","#973C20"],"slug":"duotone-3","name":"Donkergrijs en kaneel"},{"colors":["#272727","#4D5B48"],"slug":"duotone-4","name":"Donkergrijs en olijfgroen"},{"colors":["#272727","#4F5959"],"slug":"duotone-5","name":"Donkergrijs en staal"}]},"gradients":{"theme":[{"slug":"gradient-1","gradient":"linear-gradient(to bottom, #5F584F 0%, #272727 100%)","name":"Verticaal zacht drijfhout naar donkergrijs"},{"slug":"gradient-2","gradient":"linear-gradient(to bottom, #6D533C 0%, #272727 100%)","name":"Verticaal zacht walnoot naar donkergrijs"},
             {"slug":"gradient-3","gradient":"linear-gradient(to bottom, #973C20 0%, #272727 100%)","name":"Verticaal zacht kaneel naar donkergrijs"},{"slug":"gradient-4","gradient":"linear-gradient(to bottom, #4D5B48 0%, #272727 100%)","name":"Verticaal zacht olijf naar donkergrijs"},{"slug":"gradient-5","gradient":"linear-gradient(to bottom, #4F5959 0%, #272727 100%)","name":"Verticaal zacht staal naar donkergrijs"},{"slug":"gradient-6","gradient":"linear-gradient(to bottom, #909090 0%, #272727 100%)","name":"Verticaal zacht tin naar donkergrijs"},{"slug":"gradient-7","gradient":"linear-gradient(to bottom, #5F584F 50%, #272727 50%)","name":"Verticaal hard beige naar donkergrijs"},{"slug":"gradient-8","gradient":"linear-gradient(to bottom, #6D533C 50%, #272727 50%)","name":"Verticaal hard walnoot naar donkergrijs"},
@@ -64,7 +64,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /index.php?rest_route=/wp/v2/sidebars/sidebar-1&_locale=user
+          uri: /post/index.php?rest_route=/wp/v2/sidebars/sidebar-1&_locale=user
           data: |-
             {"id":"sidebar-1","widgets":["search-2","recent-posts-2","recent-comments-2","archives-2","categories-2","meta-2","block-2","block-3"]}
         output:
@@ -84,7 +84,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /index.php?rest_route=/wp/v2/posts/1&_locale=user
+          uri: /post/index.php?rest_route=/wp/v2/posts/1&_locale=user
           data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
@@ -104,7 +104,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /index.php?rest_route=/wp/v2/posts/1&_locale=user
+          uri: /post/index.php?rest_route=/wp/v2/posts/1&_locale=user
         output:
           log:
             no_expect_ids: [920450]

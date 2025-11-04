@@ -81,7 +81,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /wp-json/wp/v2/posts/1&_locale=user
+          uri: /post/wp-json/wp/v2/posts/1&_locale=user
           data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
@@ -101,7 +101,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /wp-json/wp/v2/posts/1&_locale=user
+          uri: /post/wp-json/wp/v2/posts/1&_locale=user
         output:
           log:
             no_expect_ids: [920450]
@@ -119,7 +119,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /index.php/wp-json/wp/v2/posts/1&_locale=user
+          uri: /post/index.php/wp-json/wp/v2/posts/1&_locale=user
           data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
@@ -139,7 +139,7 @@ tests:
           port: 80
           method: POST
           version: "HTTP/1.1"
-          uri: /subdir/wordpress-here/wp-json/wp/v2/posts/1&_locale=user
+          uri: /post/subdir/wordpress-here/wp-json/wp/v2/posts/1&_locale=user
           data: |-
             {"id":1,"content":"<p>Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!</p>\n\n<!-- wp:paragraph -->\n<p>dddd</p>\n<!-- /wp:paragraph -->"}
         output:
