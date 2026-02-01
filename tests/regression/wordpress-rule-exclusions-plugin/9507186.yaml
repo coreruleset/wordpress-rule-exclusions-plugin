@@ -1,11 +1,11 @@
 ---
 meta:
-  author: "azurit"
+  author: "Esad Cetiner"
   description: "Wordpress Rule Exclusions Plugin"
-rule_id: 9507793
+rule_id: 9507186
 tests:
   - test_id: 1
-    desc: Embedding XHTML file
+    desc: Entering site customizer after deleting a plugin
     stages:
       - input:
           dest_addr: 127.0.0.1
@@ -14,13 +14,9 @@ tests:
             User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
           port: 80
-          method: POST
+          method: GET
           version: "HTTP/1.1"
-          uri: /post/wp-admin/admin-ajax.php
-          data: action=parse-embed&shortcode=[embed]https://example.com/file.xhtml[/embed]
+          uri: /wp-admin/customize.php?return=%2Fwp-admin%2Fplugins.php%3Fplugin_status%3Dall%26paged%3D1%26s
         output:
           log:
-            no_expect_ids:
-              - 932240
-              - 931130
-              - 941130
+            no_expect_ids: [942120]

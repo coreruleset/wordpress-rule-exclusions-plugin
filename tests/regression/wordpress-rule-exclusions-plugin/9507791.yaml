@@ -20,4 +20,12 @@ tests:
           data: "changes[caption]=LILIOM: Name Surname (). Fotografia: Name Surname"
         output:
           log:
-            no_expect_ids: [932100]
+            no_expect_ids:
+              - 920273
+              - 932100
+              - 932130
+              - 933210
+              - 932231
+              - 941100
+              - 941160
+              - 942460
