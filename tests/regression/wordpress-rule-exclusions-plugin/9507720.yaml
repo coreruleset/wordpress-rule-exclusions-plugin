@@ -22,7 +22,6 @@ tests:
             ------WebKitFormBoundarydt8oBU5AFeiNO3ip
             Content-Disposition: form-data; name="nav-menu-data"
 
-              # yamllint disable-line rule:line-length
               [{"name":"nav-menu-data","value":""},{"name":"closedpostboxesnonce","value":"edcabbebb5"},{"name":"meta-box-order-nonce","value":"b12b971c86"},{"name":"update-nav-menu-nonce","value":"8e181e54f1"},{"name":"_wp_http_referer","value":"/wp-admin/nav-menus.php?action=edit&menu=88"},{"name":"action","value":"update"},{"name":"menu","value":"88"},{"name":"menu-name","value":"test"},{"name":"menu-item-url[3379]","value":"https://example.com"},{"name":"menu-item-title[3379]","value":"test"},{"name":"menu-item-attr-title[3379]","value":""},{"name":"menu-item-classes[3379]","value":""},{"name":"menu-item-xfn[3379]","value":""},{"name":"menu-item-description[3379]","value":""},{"name":"menu-item-db-id[3379]","value":"3379"},{"name":"menu-item-object-id[3379]","value":"3379"},{"name":"menu-item-object[3379]","value":"custom"},{"name":"menu-item-parent-id[3379]","value":"0"},{"name":"menu-item-position[3379]","value":"1"},{"name":"menu-item-type[3379]","value":"custom"}]
               ------WebKitFormBoundarydt8oBU5AFeiNO3ip
               Content-Disposition: form-data; name="closedpostboxesnonce"
