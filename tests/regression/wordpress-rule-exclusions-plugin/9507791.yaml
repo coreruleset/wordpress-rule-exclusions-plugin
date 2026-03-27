@@ -17,7 +17,17 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /post/wp-admin/admin-ajax.php
-          data: "changes[caption]=LILIOM: Name Surname (). Fotografia: Name Surname"
+          data: "action=save-attachment&changes[caption]=LILIOM: Name Surname (). Fotografia: Name Surname"
         output:
           log:
-            no_expect_ids: [932100]
+            no_expect_ids:
+              - 920273
+              - 921220
+              - 932100
+              - 932130
+              - 933210
+              - 932231
+              - 941100
+              - 941160
+              - 942432
+              - 942460
