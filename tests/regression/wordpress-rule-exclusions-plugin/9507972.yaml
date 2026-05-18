@@ -4,14 +4,15 @@ meta:
   description: "Wordpress Rule Exclusions Plugin"
 rule_id: 9507972
 tests:
+
   - test_id: 1
-    desc: Configure Albedo for next test
+    desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"
     stages:
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
@@ -20,9 +21,7 @@ tests:
           data: |-
             { "endpoints": [{"method": "GET", "url": "/get/wp-admin/plugin-install.php"}], "body": "plugins extend and expand the functionality of wordpress" }
           version: HTTP/1.1
-  - test_id: 2
-    desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
@@ -36,28 +35,28 @@ tests:
         output:
           log:
             no_expect_ids: [953101]
-  - test_id: 3
-    desc: Reset Albedo for next tests
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
           method: PUT
           uri: /reset
           version: HTTP/1.1
-  - test_id: 4
-    desc: Configure Albedo for next test
+
+  - test_id: 2
+    desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"
     stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
@@ -66,9 +65,7 @@ tests:
           data: |-
             { "endpoints": [{"method": "GET", "url": "/get/wp-admin/plugins.php"}], "body": "plugins extend and expand the functionality of wordpress" }
           version: HTTP/1.1
-  - test_id: 5
-    desc: Disable 953101 for response body "plugins extend and expand the functionality of wordpress"
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
@@ -82,28 +79,28 @@ tests:
         output:
           log:
             no_expect_ids: [953101]
-  - test_id: 6
-    desc: Reset Albedo for next tests
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
           method: PUT
           uri: /reset
           version: HTTP/1.1
-  - test_id: 7
-    desc: Configure Albedo for next test
+
+  - test_id: 3
+    desc: Disable 953100
     stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
@@ -112,9 +109,7 @@ tests:
           data: |-
             { "endpoints": [{"method": "GET", "url": "/get/wp-admin/plugin-install.php"}], "body": "Fixed: Call to a member function get_meta() on null error on WooCommerce order received page" }
           version: HTTP/1.1
-  - test_id: 8
-    desc: Disable 953100
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
@@ -128,28 +123,28 @@ tests:
         output:
           log:
             no_expect_ids: [953100]
-  - test_id: 9
-    desc: Reset Albedo for next tests
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
           method: PUT
           uri: /reset
           version: HTTP/1.1
-  - test_id: 10
-    desc: Configure Albedo for next test
+  
+  - test_id: 4
+    desc: Disable 951240
     stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
@@ -158,9 +153,7 @@ tests:
           data: |-
             { "endpoints": [{"method": "GET", "url": "/get/wp-admin/plugin-install.php"}], "body": "warnings</p>\x0a<p>=1.9=<br />\x0a* [Added] Donation link because I&#8217;m poor<br />\x0a* [Removed] errors and deprecating warnings</p>\x0a<p>=1.8.1=<br />\x0a* [Updated] Renamed function from ‚my_profile_update‘ to ‚apg_profile_update‘" }
           version: HTTP/1.1
-  - test_id: 11
-    desc: Disable 951240
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
@@ -174,14 +167,12 @@ tests:
         output:
           log:
             no_expect_ids: [951240]
-  - test_id: 12
-    desc: Reset Albedo for next tests
-    stages:
+
       - input:
           dest_addr: 127.0.0.1
           headers:
             Host: localhost
-            User-Agent: Roundcube rule exclusions plugin
+            User-Agent: OWASP CRS test agent
             Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
             Content-Type: application/json
           port: 80
