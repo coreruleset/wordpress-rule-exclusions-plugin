@@ -135,7 +135,7 @@ tests:
           method: PUT
           uri: /reset
           version: HTTP/1.1
-  
+
   - test_id: 4
     desc: Disable 951240
     stages:
