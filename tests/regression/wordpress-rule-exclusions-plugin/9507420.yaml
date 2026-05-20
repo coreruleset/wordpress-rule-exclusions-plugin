@@ -23,4 +23,5 @@ tests:
           log:
             no_expect_ids:
               - 920273
+              - 932236
               - 941110
