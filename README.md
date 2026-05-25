@@ -1,5 +1,20 @@
-# OWASP CRS - WordPress Rule Exclusions Plugin
+# OWASP CRS - WordPress Rule Exclusions Plugin (eilandert fork)
 ![Integration tests](https://github.com/coreruleset/wordpress-rule-exclusions-plugin/actions/workflows/integration.yml/badge.svg)
+
+## Fork divergence
+
+Upstream policy is to only cover vanilla WordPress. This fork additionally
+ships exclusions for well-known third-party plugins that are unconditionally
+false-positive-prone. Currently covered:
+
+- **WP Statistics** (`wps_*_page` settings) — rich-text email templates and
+  CRLF-separated allow/deny lists. Rules 932200, 932236, 941100, 941150,
+  941160, 941320, 942131, 942210, 942430, 942520. IDs 9507975–9507977.
+
+Each addition is scoped to a specific URI + ARGS combination so unrelated
+admin traffic still gets full CRS protection. See the trailing
+`-=[ Third-party plugin: ... ]=-` section in
+`plugins/wordpress-rule-exclusions-before.conf`.
 
 ## Description
 
