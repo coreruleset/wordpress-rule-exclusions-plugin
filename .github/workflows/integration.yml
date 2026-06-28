@@ -4,4 +4,4 @@ name: Integration tests
 
 jobs:
   integration-tests:
-    uses: coreruleset/crs-plugin-test-action/.github/workflows/integration.yaml@738f25b8d5ee671dcc8ba76aa29365ffd690309a # v3.0.0
+    uses: coreruleset/crs-plugin-test-action/.github/workflows/integration.yaml@dc6ec812db88f222ad2ca435f9bdb4e9f7a577a1 # v3.0.1
