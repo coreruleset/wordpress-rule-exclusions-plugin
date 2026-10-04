@@ -109,7 +109,7 @@ tests:
           port: 80
           method: GET
           version: "HTTP/1.1"
-          uri: /get/wp-login.php?redirect_to=https%3A%2F%2Fexample.com%2Fwp-admin%2Fedit.php%3Fs%26post_status%3Dall%26post_type%3Dpost%26action%3D-1%26m%3D0%26cat%3D1%26post_format%26seo-filter%26filter_action%3DFiltrova%25C5%25A5%26paged%3D1%26action2%3D-1
+          uri: /get/wp-login.php?redirect_to=https%3A%2F%2Flocalhost%2Fwp-admin%2Fedit.php%3Fs%26post_status%3Dall%26post_type%3Dpost%26action%3D-1%26m%3D0%26cat%3D1%26post_format%26seo-filter%26filter_action%3DFiltrova%25C5%25A5%26paged%3D1%26action2%3D-1
         output:
           log:
             no_expect_ids:
