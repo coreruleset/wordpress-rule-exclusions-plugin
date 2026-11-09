@@ -1,6 +1,6 @@
 ---
 meta:
-  author: "Max Leske"
+  author: "Max Leske, azurit"
   description: "Wordpress Rule Exclusions Plugin"
 rule_id: 9507355
 tests:
@@ -18,13 +18,14 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /wp-admin/post.php
-          data: referredby=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fs%3Duser%26post_status%3Dall%26post_type%3Dpost%26action%3D-1%26m%3D0%26cat%3D0%26post_format%26paged%3D1%26action2%3D-1
+          data: referredby=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fs%3Duser%26post_status%3Dall%26post_type%3Dpost%26action%3D-1%26m%3D0%26cat%3D0%26post_format%26paged%3D1%26action2%3D-1%26hh%3D20
         output:
           log:
             no_expect_ids:
               - 920273
               - 932235
               - 932236
+              - 932370
               - 942120
               - 942430
               - 942431
@@ -43,13 +44,14 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /wp-admin/post.php
-          data: _wp_original_http_referer=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fs%3Duser%26post_status%3Dall%26post_type%3Dpost%26action%3D-1%26m%3D0%26cat%3D0%26post_format%26paged%3D1%26action2%3D-1
+          data: _wp_original_http_referer=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fs%3Duser%26post_status%3Dall%26post_type%3Dpost%26action%3D-1%26m%3D0%26cat%3D0%26post_format%26paged%3D1%26action2%3D-1%26hh%3D20
         output:
           log:
             no_expect_ids:
               - 920273
               - 932235
               - 932236
+              - 932370
               - 942120
               - 942430
               - 942431
