@@ -68,7 +68,7 @@ tests:
           method: POST
           version: "HTTP/1.1"
           uri: /wp-admin/post.php
-          data: referredby=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fhh%3D20&_wp_original_http_referer=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fhh%3D20
+          data: referredby=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fmm%3D10%26hh%3D20&_wp_original_http_referer=https%3A%2F%2Fwebsite.xyz%2Fwp-admin%2Fedit.php%3Fmm%3D10%26hh%3D20
         output:
           log:
             no_expect_ids: [932370]
